@@ -1,17 +1,80 @@
-const screens =document.querySelectorAll('.screen')
-const start_btn = document.getElementById('start-btn')
-const choose_choice_btn = document.querySelectorAll('.choose-choice-btn')
-const game_container=document.getElementById('game-container')
+@import URL('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap');
 
-start_btn.addEventListener('click', () => {
-    screens[0].classList.add('up')
-})
+* {
+    box-sizing: border-box;
+}
 
-choose_choice_btn.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-        screens[1].classList.add('up')
-        const img = btn.querySelector('img')
-        startGame()
-        createInsect()
-    })
-})
+body {
+    background-color: #516dff;
+    color: #fff;
+    font-family: 'Big Shoulders Stencil', sans-serif;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+
+}
+
+h1 {
+    line-height: 1.4;
+}
+
+.btn {
+    border: 0;
+    background-color: #fff;
+    color: #516dff;
+    padding: 15px 20px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.screens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 1s ease-out;
+}
+
+.screens.up {
+    margin-top: -100vh;
+}
+
+.Choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.Choices li {
+    margin: 10px;
+}
+
+.choose-choice-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+}
+
+.choose-choice-btn img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    align-items: center;
+}
+
+.choose-choice-btn:active {
+    background-color: rgba(255, 255, 255, 0.7);
+}
